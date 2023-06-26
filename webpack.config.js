@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'ToDo List',
+      title: 'KanBan Project',
       template: './src/index.html',
     }),
   ],
