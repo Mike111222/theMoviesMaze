@@ -1,0 +1,73 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "<a name=\"readme-top\"></a>",
+  "private": true,
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "webpack serve --open",
+    "build": "webpack --mode=development",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "hint": "node -r esm node_modules/.bin/hint ."
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/Mike111222/ToDoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mike111222/ToDoList/issues"
+  },
+  "homepage": "https://github.com/Mike111222/ToDoList#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.22.5",
+    "babel-jest": "^29.5.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "css-loader": "^6.7.3",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.27.5",
+    "esm": "^3.2.25",
+    "gh-pages": "^5.0.0",
+    "hint": "^7.1.9",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jsdom": "^21.1.1",
+    "style-loader": "^3.3.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  },
+  "main": "webpack.config.js",
+  "directories": {
+    "test": "tests"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
