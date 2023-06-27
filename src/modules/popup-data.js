@@ -1,5 +1,5 @@
 import add from './addcomments.js';
-import displaycomments from './displaycomments.js';
+import { displaycomments, count } from './displaycomments.js';
 
 const details = async (id) => {
   await fetch(`https://api.tvmaze.com/shows/${id}`)
@@ -24,6 +24,7 @@ const details = async (id) => {
           const response = await fetch(fetchUrl);
           const fetchedData = await response.json();
           displaycomments(fetchedData);
+          count(fetchedData);
         } catch (error) {
           // handle error if needed
         }
