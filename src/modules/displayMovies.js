@@ -8,18 +8,18 @@ const displayMovies = (movies) => {
 
   limitedMovies.forEach((movie, index) => {
     const column = document.createElement('div');
-    column.className = 'col-4';
+    column.classList.add('col-4', 'd-flex', 'justify-content-center');
 
     const imageUrl = movie?.image?.medium || 'placeholder.jpg';
 
     const cardContent = `
-      <div class="card text-center" style="width: 18rem;">
+      <div class="card text-center " style="width: 23rem;">
         <img src="${imageUrl}" class="card-img-top" alt="${movie?.name}">
         <div class="card-body">
-          <div class="row">
-            <div class="col-5"><h5 class="card-title">${movie?.name}</h5></div>
-            <div class="col-5">
-              <button class="like-button">
+          <div class="row my-3">
+            <div class="col-9"><h5 class="card-title text-start">${movie?.name}</h5></div>
+            <div class="col-3">
+              <button class="like-button ">
               <i class="fa fa-heart" aria-hidden="true"></i>
               </button>
             </div>
