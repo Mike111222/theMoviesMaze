@@ -1,3 +1,14 @@
+import details from './popup-data.js';
+
+const attachEventListeners = () => {
+  const comment = document.getElementsByClassName('comment');
+  Array.from(comment).forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      const id = event.target.getAttribute('data-id');
+      details(id);
+    });
+  });
+};
 const displayMovies = (movies) => {
   const mainContainer = document.querySelector('.main-container');
 
@@ -24,7 +35,7 @@ const displayMovies = (movies) => {
               </button>
             </div>
           </div>
-          <a href="#" class="btn btn-primary">Comment</a>
+          <button  type="button" class="btn btn-primary comment" data-bs-toggle="modal" data-bs-target="#Mymodal" data-id="${movie?.id}" >Comment</button>
         </div>
       </div>
     `;
@@ -41,19 +52,15 @@ const displayMovies = (movies) => {
   });
 
   mainContainer.appendChild(row);
+  attachEventListeners();
 };
 
 const fetchMovies = async () => {
-  try {
-    const fetchUrl = 'https://api.tvmaze.com/shows?page=1';
-    const response = await fetch(fetchUrl);
-    const fetchedData = await response.json();
-    displayMovies(fetchedData);
-  } catch (error) {
-    console.error('Error fetching movies:', error);
-  }
+  const fetchUrl = 'https://api.tvmaze.com/shows?page=1';
+  const response = await fetch(fetchUrl);
+  const fetchedData = await response.json();
+  displayMovies(fetchedData);
 };
 
 fetchMovies();
-
 export default displayMovies;
