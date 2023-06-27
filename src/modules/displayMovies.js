@@ -1,4 +1,3 @@
-
 import details from './popup-data.js';
 
 import addLike from './addLikes.js';
@@ -67,7 +66,6 @@ const displayMovies = (movies) => {
 };
 
 const fetchMovies = async () => {
-
   try {
     const fetchUrl = 'https://api.tvmaze.com/shows?page=1';
     const response = await fetch(fetchUrl);
