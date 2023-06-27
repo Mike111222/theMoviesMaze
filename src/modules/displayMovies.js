@@ -1,3 +1,5 @@
+import addLike from './addLikes.js';
+
 const displayMovies = (movies) => {
   const mainContainer = document.querySelector('.main-container');
 
@@ -19,8 +21,8 @@ const displayMovies = (movies) => {
           <div class="row my-3">
             <div class="col-9"><h5 class="card-title text-start">${movie?.name}</h5></div>
             <div class="col-3">
-              <button class="like-button ">
-              <i class="fa fa-heart" aria-hidden="true"></i>
+              <button class="like-button">
+                <i class="fa fa-heart" aria-hidden="true"></i>
               </button>
             </div>
           </div>
@@ -30,6 +32,13 @@ const displayMovies = (movies) => {
     `;
 
     column.innerHTML = cardContent;
+
+    const likeButton = column.querySelector('.like-button');
+    if (likeButton) {
+      likeButton.addEventListener('click', () => {
+        addLike(movie.id);
+      });
+    }
 
     row.appendChild(column);
 
@@ -50,7 +59,7 @@ const fetchMovies = async () => {
     const fetchedData = await response.json();
     displayMovies(fetchedData);
   } catch (error) {
-    console.error('Error fetching movies:', error);
+    // handle error if needed
   }
 };
 
