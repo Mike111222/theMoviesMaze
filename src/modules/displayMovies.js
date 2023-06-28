@@ -78,10 +78,10 @@ const displayMovies = async (movies) => {
         await incrementLikeCount(itemId, likeCount);
       });
     }
-
+   
     const currentRow = acc[acc.length - 1];
     currentRow.appendChild(column);
-
+    updateLikeCount(itemId, likeCount);
     return acc;
   }, []);
 
