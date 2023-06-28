@@ -10,7 +10,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'KanBan Project',
+      title: 'theMoviesMaze Project',
       template: './src/index.html',
     }),
   ],
