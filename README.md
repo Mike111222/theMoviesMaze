@@ -1,4 +1,4 @@
-# ToDoList
+# theMoviesMaze
 <a name="readme-top"></a>
 
 <div align="center">
@@ -6,7 +6,7 @@
  
   <br/>
 
-  <h3><b>ToDo List</b></h3>
+  <h3><b>The Movies Maze</b></h3>
 
 </div>
 
@@ -14,9 +14,9 @@
 
 # 📗 Table of Contents
 
-- [ToDoList](#todolist)
+- [theMoviesMaze](#themoviesmaze)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 \[ToDo List\] ](#-todo-list-)
+- [📖 \[theMoviesMaze\] ](#-themoviesmaze-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -24,8 +24,10 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-    - [To run the project](#to-run-the-project)
-    - [To run the test](#to-run-the-test)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+    - [Deployment ](#deployment-)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -36,9 +38,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [ToDo List] <a name="about-project"></a>
+# 📖 [theMoviesMaze] <a name="about-project"></a>
 
-**[Here you can add your daily tasks list and check every task according to its completion. You can also remove and edit tasks. You can also clear all completed tasks after selecting them from the list. HTML/CSS and JavaScript best practices are used to make this project. Also used webpacks in this project. This project can be run on localhost.]**
+**[In theMoviesMaze, users can like Movies, TV Shows, and they can check out the details of every Movie or Show by clicking on the Comment Button. It also allows you to like the Movies. All data is preserved thanks to the external TVMaze API and Involvement API services. Fetching of the Movies, Details of the Movies, Adding and Getting Likes, and Comments Data are all preserved by the aforementioned APIs. Comment and Like buttons are there to update the Comments and Likes. Async & Await are also implemented along with some styling.]**
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -47,23 +49,27 @@
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://html.com/">HTML</a></li>
-    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
-    <li><a href="https://www.javascript.com/">JavaScript</a></li>    
+    <li><a href="#">HTML, BootStarp, JavaScript, Webpack, API</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="#">N/A</a></li>
+    <li><a href="https://localhost:8080/">Dev Server</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+  <summary>Pakage Manager</summary>
   <ul>
-    <li><a href="#">N/A</a></li>
+    <li><a href="#">NPM</a></li>
+  </ul>
+</details>
+<details>
+  <summary>API</summary>
+  <ul>
+    <li><a href="#">Post Master</a></li>
   </ul>
 </details>
 
@@ -71,25 +77,26 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **[Displays List of ToDo Tasks]**
-- **[Addition of New Tasks]**
-- **[Removal of a Task from the list]**
-- **[Local storage]**
-- **[Editing a task with Edit Button]**
-- **[Checkboxes are there to check the completed tasks]**
-- **[All the completed tasks can be Cleared by Clicking the Clear All Completed Button]**
-- **[A Reset button is also there to reset all the tasks.]**
+- **[Displays List of Movies, Likes, Details and Comments]**
+- **[Addition of New Likes and Comments]**
+- **[Number of Movies or Shows on Homepage, number of Likes, and number of Comments are all counted and being displayed along with the updation]**
+- **[TVMaze and Involvement APIs are responsible for storage and retrieval of Data]**
+- **[A Like and a Comment button is there to fetch all the Likes, Details, and Comments using APIs.]**
 - **[Webpack is managing all the dependencies and auto loading in browser]**
 - **[All the scetions and functionality is re-created by ES6 Modules]**
-- **[ToDo List is Interactive, checking and unchecking the checkbox is interactive.]**
+- **[Jest Tests and Coverage flags are implemented to test the Counters]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
+
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- <a href="https://mike111222.github.io/ToDoList/dist/">My ToDoList Project's Live Demo Link</a>
+
+- [Live Demo Link of theMoviesMaze](https://mike111222.github.io/theMoviesMaze/dist/)
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,41 +104,76 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-- Install VS Code and run it on Live Server if you want to check how the code works on local host. 
+
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-1. Browser.
-2. VS Code editor
-3. Git and GitHub
-4. Webpack Setup
+- A web browser to view output e.g [Google Chrome](https://www.google.com/chrome/).
+- An IDE e.g [Visual studio code](https://code.visualstudio.com/).
+- `node` should be installed in your local machine, [node website](https://nodejs.org/en/download/).
+- Install the `npm` package manager use this [to install both node and npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- [A terminal](https://code.visualstudio.com/docs/terminal/basics).
 
 ### Setup
 
-Clone this repository to your desired folder:
+Clone this repository to your desired folder or download the Zip folder:
 
-```sh
-  cd my-folder
-  git clone git@github.com:Mike111222/ToDoList.git
+```
+https://github.com/Mike111222/theMoviesMaze
 ```
 
-### To run the project
+- Navigate to the location of the folder in your machine:
 
-Open index.html file in VS Code, run via live server extension and see how the code works. You can also visit the Live Demo Link to see how the Project works online.
+**``you@your-Pc-name:~$ cd theMoviesMaze``**
 
-### To run the test
-Make sure you are in the project folder
+### Install
 
-- [x] Make sure you have node.js installed
-- [x] npm installed 
-- [x] npm i -D jest
-- [x] change your your test script to jest (optional: --coverage)
-- [x] Run npm test
+To install all dependencies, run:
+
+```
+npm install
+```
+
+### Usage
+
+To run the project, follow these instructions:
+
+- After Cloning this repo to your local machine.
+- Open the `index.html` in your browser.
+- You can also use `npm start` command in terminal to run this at localhost:8080
+
+### Run tests
+
+To run tests, run the following command:
+
+- Track HTML linter errors run:
+```
+npx hint .
+```
+- Track CSS linter errors run:
+```
+npx stylelint "**/*.{css,scss}"
+```
+- Track JavaScript linter errors run:
+```
+npx eslint .
+```
+- run test:
+```
+npm test 
+```
+
+### Deployment <a name="deployment"></a>
+
+You can deploy this project using: GitHub Pages,
+- I used GitHub Pages to deploy my website.
+- For more information about publishing sources, see "[About GitHub pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#publishing-sources-for-github-pages-sites)".
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-Use index.html file.
+
 
 <!-- AUTHORS -->
 
@@ -143,13 +185,20 @@ Use index.html file.
 - LinkedIn: [LinkedIn](https://linkedin.com/in/Mike111222)
 - Twitter: [@twitterhandle](https://twitter.com/iMike111222)
 
+👤 **Batool Fatima**
+
+- GitHub: [@githubhandle](https://github.com/batoolfatima2135)
+- Twitter: [@twitterhandle](https://twitter.com/batool2135)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/batool-fatima-515531196/)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Navigation bar]**
+- [ ] **[More styles will be added to make my project look more beautiful and appealing.]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -186,7 +235,7 @@ I would like to thank my fellow Authors, my friend, my code reviewers and Microv
 
 - **[How can the project be improved]**
 
-  - [More features can be intergrated by adding more pages for example pending tasks from the past]
+  - [More features can be intergrated by adding more pages]
 
 - **[Can I use this project for study purposes]**
 
