@@ -2,13 +2,7 @@ import { count } from '../modules/displaycomments.js';
 
 describe('count function', () => {
   let countElement;
-  // Mock getElementById
-  const mockDocument = {
-    getElementById: jest.fn().mockReturnValue(countElement),
-  };
 
-  // Assign the mock document to global object
-  global.document = mockDocument;
   beforeEach(() => {
     // Create a mock count element
     countElement = {
