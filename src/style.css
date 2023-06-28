@@ -3,6 +3,19 @@ body {
   background-color: #1a1f17;
 }
 
+.navbar-brand {
+  color: #d22d2d;
+  font-weight: 700;
+}
+
+.navbar-brand:hover {
+  color: white;
+}
+
+.nav-link:hover {
+  color: #d22d2d;
+}
+
 footer {
   background-color: #343b2e;
 }
