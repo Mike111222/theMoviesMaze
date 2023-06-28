@@ -3,9 +3,9 @@ import details from './popup-data.js';
 import addLike from './addLikes.js';
 
 const attachEventListeners = () => {
-  const comment = document.getElementsByClassName('comment');
-  Array.from(comment).forEach((btn) => {
-    btn.addEventListener('click', (event) => {
+  const comment = document.querySelectorAll('.commentbtn');
+  comment.forEach((btn) => {
+    btn.addEventListener('mousedown', (event) => {
       const id = event.target.getAttribute('data-id');
       details(id);
     });
@@ -38,7 +38,7 @@ const displayMovies = (movies) => {
               </button>
             </div>
           </div>
-          <button  type="button" class="btn btn-primary comment" data-bs-toggle="modal" data-bs-target="#Mymodal" data-id="${movie?.id}" >Comment</button>
+          <button class="btn btn-primary commentbtn" data-bs-toggle="modal" data-bs-target="#Mymodal" data-id="${movie?.id}" >Comment</button>
         </div>
       </div>
     `;
