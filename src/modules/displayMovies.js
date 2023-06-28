@@ -45,7 +45,7 @@ const displayMovies = async (movies) => {
     }
 
     const column = document.createElement('div');
-    column.classList.add('col-4', 'd-flex', 'justify-content-center');
+    column.classList.add('col-lg-4', 'col-sm-12', 'col-md-4', 'd-flex', 'justify-content-center');
 
     const imageUrl = movie?.image?.medium || 'placeholder.jpg';
 
@@ -54,9 +54,9 @@ const displayMovies = async (movies) => {
         <img src="${imageUrl}" class="card-img-top" alt="${movie?.name}">
         <div class="card-body">
           <div class="row my-3">
-            <div class="col-9"><h5 class="card-title text-start">${movie?.name}</h5></div>
-            <div class="col-3">
-              <button class="like-button" data-item-id="${movie?.id}">
+            <div class="col-lg-8 col-sm-7 col-md-7"><h5 class="card-title text-start">${movie?.name}</h5></div>
+            <div class="col-sm-4 col-lg-4 col-md-5">
+              <button class="like-button btn btn-danger" data-item-id="${movie?.id}">
                 <i class="fa fa-heart" aria-hidden="true"></i>
                 <span class="like-count">0</span> Likes
               </button>
