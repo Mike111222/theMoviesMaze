@@ -29,6 +29,7 @@ const modal = ((json) => {
     }
   };
   fetchComments();
+
   const form = document.getElementById('form');
   const onSubmit = async (event) => {
     event.preventDefault();
