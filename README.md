@@ -188,6 +188,8 @@ You can deploy this project using: GitHub Pages,
 👤 **Batool Fatima**
 
 - GitHub: [@githubhandle](https://github.com/batoolfatima2135)
+- Twitter: [@twitterhandle](https://twitter.com/batool2135)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/batool-fatima-515531196/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
