@@ -1,6 +1,7 @@
 import details from './popup-data.js';
-
 import addLike from './addLikes.js';
+import getLikes from './getLikes.js';
+import countMovies from './countMovies.js';
 
 const attachEventListeners = () => {
   const comment = document.querySelectorAll('.commentbtn');
@@ -12,15 +13,37 @@ const attachEventListeners = () => {
   });
 };
 
-const displayMovies = (movies) => {
+const updateLikeCount = async (itemId, likeCountElement) => {
+  const updatedLikes = await getLikes(itemId);
+  let currentLikes = '0';
+
+  if (Array.isArray(updatedLikes)) {
+    const item = updatedLikes.find((item) => item.item_id === itemId);
+    if (item) {
+      currentLikes = item.likes.toString();
+    }
+  }
+
+  likeCountElement.textContent = currentLikes;
+};
+
+const incrementLikeCount = async (itemId, likeCountElement) => {
+  await addLike(itemId);
+  await updateLikeCount(itemId, likeCountElement);
+};
+
+const displayMovies = async (movies) => {
   const mainContainer = document.querySelector('.main-container');
 
   const limitedMovies = movies?.slice(0, 21) || [];
 
-  let row = document.createElement('div');
-  row.className = 'row justify-content-center my-3';
+  const rows = limitedMovies.reduce((acc, movie, index) => {
+    if (index % 3 === 0) {
+      const row = document.createElement('div');
+      row.className = 'row justify-content-center my-3';
+      acc.push(row);
+    }
 
-  limitedMovies.forEach((movie, index) => {
     const column = document.createElement('div');
     column.classList.add('col-4', 'd-flex', 'justify-content-center');
 
@@ -33,11 +56,13 @@ const displayMovies = (movies) => {
           <div class="row my-3">
             <div class="col-9"><h5 class="card-title text-start">${movie?.name}</h5></div>
             <div class="col-3">
-              <button class="like-button">
+              <button class="like-button" data-item-id="${movie?.id}">
                 <i class="fa fa-heart" aria-hidden="true"></i>
+                <span class="like-count">0</span> Likes
               </button>
             </div>
           </div>
+
           <button class="btn btn-primary commentbtn" data-bs-toggle="modal" data-bs-target="#Mymodal" data-id="${movie?.id}" >Comment</button>
         </div>
       </div>
@@ -46,23 +71,26 @@ const displayMovies = (movies) => {
     column.innerHTML = cardContent;
 
     const likeButton = column.querySelector('.like-button');
+    const likeCount = column.querySelector('.like-count');
+    const itemId = likeButton.getAttribute('data-item-id');
+
     if (likeButton) {
-      likeButton.addEventListener('click', () => {
-        addLike(movie.id);
+      likeButton.addEventListener('click', async () => {
+        await incrementLikeCount(itemId, likeCount);
       });
     }
 
-    row.appendChild(column);
+    const currentRow = acc[acc.length - 1];
+    currentRow.appendChild(column);
+    updateLikeCount(itemId, likeCount);
+    return acc;
+  }, []);
 
-    if ((index + 1) % 3 === 0) {
-      mainContainer.appendChild(row);
-      row = document.createElement('div');
-      row.className = 'row justify-content-center my-3';
-    }
-  });
+  rows.forEach((row) => mainContainer.appendChild(row));
 
-  mainContainer.appendChild(row);
   attachEventListeners();
+
+  countMovies(); // Invoke countMovies initially to display the initial count
 };
 
 const fetchMovies = async () => {
