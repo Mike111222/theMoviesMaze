@@ -4,7 +4,7 @@
   "description": "<a name=\"readme-top\"></a>",
   "private": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest",
     "start": "webpack serve --open",
     "build": "webpack --mode=development",
     "predeploy": "npm run build",
@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Mike111222/theMovieMaze#readme",
   "dependencies": {
     "@babel/preset-env": "^7.22.5",
+    "jest-environment-jsdom": "^29.5.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
