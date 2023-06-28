@@ -1,3 +1,6 @@
+import add from './addcomments.js';
+import { displaycomments, count } from './displaycomments.js';
+
 const details = async (id) => {
   await fetch(`https://api.tvmaze.com/shows/${id}`)
     .then((response) => response.json())
@@ -15,6 +18,28 @@ const details = async (id) => {
       document.getElementById('rating').innerHTML = json.rating.average;
       document.getElementById('premiered').innerHTML = json.premiered;
       document.getElementById('averageRuntime').innerHTML = `${json.runtime} minutes`;
+      const fetchComments = async () => {
+        try {
+          const fetchUrl = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4GPf219m22AmrD3G654e/comments?item_id=${json.id}`;
+          const response = await fetch(fetchUrl);
+          const fetchedData = await response.json();
+          displaycomments(fetchedData);
+          count(fetchedData);
+        } catch (error) {
+          // handle error if needed
+        }
+      };
+      fetchComments();
+      const form = document.getElementById('form');
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = document.getElementById('username').value;
+        const comment = document.getElementById('comment').value;
+        await add(name, comment, json.id);
+        fetchComments();
+        document.getElementById('username').value = '';
+        document.getElementById('comment').value = '';
+      });
       const closeIcon = document.getElementById('closeIcon');
       closeIcon.addEventListener('click', () => {
         modal.classList.remove('show');
