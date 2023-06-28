@@ -12,6 +12,10 @@ body {
   color: white;
 }
 
+.nav-link {
+  color: white;
+}
+
 .nav-link:hover {
   color: #d22d2d;
 }
@@ -23,8 +27,4 @@ footer {
 header,
 .navbar {
   background-color: #343b2e !important;
-}
-
-.nav-link {
-  color: white;
 }
