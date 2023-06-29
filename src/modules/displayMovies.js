@@ -35,7 +35,7 @@ const incrementLikeCount = async (itemId, likeCountElement) => {
 const displayMovies = async (movies) => {
   const mainContainer = document.querySelector('.main-container');
 
-  const limitedMovies = movies?.slice(0, 21) || [];
+  const limitedMovies = movies?.slice(0, 99) || [];
 
   const rows = limitedMovies.reduce((acc, movie, index) => {
     if (index % 3 === 0) {
