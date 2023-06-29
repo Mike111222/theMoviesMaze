@@ -96,7 +96,7 @@
 
 - [Live Demo Link of our theMoviesMaze](https://mike111222.github.io/theMoviesMaze/dist/)
 
-- [Live Video Link of our theMoviesMaze](https://youtu.be/6eFE18lJ6BI)
+- [Live Video Link of our theMoviesMaze](https://youtu.be/V3qXCsmegUU)
 
 
 
